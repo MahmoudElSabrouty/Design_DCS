@@ -1,0 +1,1 @@
+typedef StdType uint8;
