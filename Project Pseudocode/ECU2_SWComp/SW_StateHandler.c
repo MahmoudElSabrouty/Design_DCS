@@ -86,6 +86,9 @@ static void SW_StateHandler_State(void)
 
     /*Reading Different State to Decide the correct condition
      */
+
+
+    boolean stateUpdate = FALSE;
     static SW_StatType  SWState;
     static DR_StatType  DRState;
     static SPD_StatType SPDState;
@@ -98,24 +101,27 @@ static void SW_StateHandler_State(void)
    switch(SWStateHandler)
   {
       case SH_INIT:
+
       break;
       
       case SH_DRN_SPMOV:
-          /*Do nothing*/
+          
+          /*Validate State Exit Conditions */
+          stateUpdate = TRUE;
       break;
       case SH_DRN_SPSTP:
-          /*Do nothing*/                    
+            /*Validate State Exit Conditions */
+         stateUpdate = TRUE;               
       break;
       case SH_DRC_LN:
-          /* Wait 3 seconds -> Counter Based wait.
-             Lights are OFF if counter expired*/
-            if (TRUE==WaitTimeout())
-            {
-              LED_StatUpdate(ledid,LED_OFF);
-            }
+      
+        /*Validate State Exit Conditions */
+         stateUpdate = TRUE;
+    
       break;
       case SH_SPMOV_SWPRES:
-          /*Do nothing*/
+        /*Validate State Exit Conditions */
+         stateUpdate = TRUE;
      
       break;
 

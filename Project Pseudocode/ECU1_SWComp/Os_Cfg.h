@@ -9,6 +9,12 @@ void Task_Init()
 
 }
 
+void Task_5ms()
+{
+    /* DCS_SW_005:	Speed state message will be sent every 5ms to ECU 2*/
+    DataHandler_SPD()
+}
+
 void Task_20ms()
 {
     /* DCS_SW_004:	Light switch state message will be sent every 20ms to ECU 2*/
@@ -16,12 +22,6 @@ void Task_20ms()
 
 }
  
-
-void Task_5ms()
-{
-    /* DCS_SW_005:	Speed state message will be sent every 5ms to ECU 2*/
-    DataHandler_SPD()
-}
 
 void Task_10ms()
 {

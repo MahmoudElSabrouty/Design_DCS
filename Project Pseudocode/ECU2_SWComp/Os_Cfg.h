@@ -7,13 +7,6 @@ void Task_Init()
     BZR_Ctrl_Init(BZRConfig);
 
 }
-
-void Task_20ms(void)
-{
-    /* DCS_SW_004:	Light switch state message will be sent every 20ms to ECU 2*/
-    BCMH_Update_SW_State();
-    
-}
  
 
 void Task_5ms(void){
@@ -28,3 +21,9 @@ void Task_10ms(void){
 } 
 
 
+void Task_20ms(void)
+{
+    /* DCS_SW_004:	Light switch state message will be sent every 20ms to ECU 2*/
+    BCMH_Update_SW_State();
+    
+}
